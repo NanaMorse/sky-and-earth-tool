@@ -17,7 +17,8 @@
       "Bash(ssh-keygen:*)",
       "Bash(cat:*)",
       "Bash(ssh-add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(yarn build:*)"
     ],
     "deny": [],
     "ask": []

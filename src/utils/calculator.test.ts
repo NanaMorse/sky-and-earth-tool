@@ -38,7 +38,7 @@ describe('calculator', () => {
 
       expect(results.length).toBe(1)
       // 光应该是3（设置为3），而不是5（2+3）
-      expect(results[0].finalCounter.light).toBe(3)
+      expect(results[0]!.finalCounter.light).toBe(3)
     })
 
     it('should decrease other elements by 1 when casting spell', () => {
@@ -58,9 +58,9 @@ describe('calculator', () => {
       const results = calculate(userChoices, initialCounter)
 
       expect(results.length).toBe(1)
-      expect(results[0].finalCounter.wind).toBe(3) // 风设置为3
-      expect(results[0].finalCounter.light).toBe(1) // 光从2减到1
-      expect(results[0].finalCounter.fire).toBe(2) // 火从3减到2
+      expect(results[0]!.finalCounter.wind).toBe(3) // 风设置为3
+      expect(results[0]!.finalCounter.light).toBe(1) // 光从2减到1
+      expect(results[0]!.finalCounter.fire).toBe(2) // 火从3减到2
     })
 
     it('should not decrease element below 0', () => {
@@ -79,10 +79,10 @@ describe('calculator', () => {
       const results = calculate(userChoices, initialCounter)
 
       expect(results.length).toBe(1)
-      expect(results[0].finalCounter.light).toBe(3)
+      expect(results[0]!.finalCounter.light).toBe(3)
       // 其他属性应该是0，而不是-1
-      expect(results[0].finalCounter.fire).toBe(0)
-      expect(results[0].finalCounter.water).toBe(0)
+      expect(results[0]!.finalCounter.fire).toBe(0)
+      expect(results[0]!.finalCounter.water).toBe(0)
     })
 
     it('should correctly calculate the bug scenario: light=2 initial, multiple spells', () => {
@@ -102,7 +102,7 @@ describe('calculator', () => {
       const results = calculate(userChoices, initialCounter)
 
       expect(results.length).toBe(1)
-      const result = results[0]
+      const result = results[0]!
 
       // 执行顺序（按敏捷）：
       // 1. 索拉哈利亚释放光: 光=3, 其他-1 (都是0，不变)
@@ -152,7 +152,7 @@ describe('calculator', () => {
 
       // 验证结果按skillCount降序排列
       for (let i = 1; i < results.length; i++) {
-        expect(results[i - 1].skillCount).toBeGreaterThanOrEqual(results[i].skillCount)
+        expect(results[i - 1]!.skillCount).toBeGreaterThanOrEqual(results[i]!.skillCount)
       }
     })
 
@@ -190,7 +190,7 @@ describe('calculator', () => {
 
       expect(results.length).toBe(1)
       // 风=3 > 暗=0，但暗=0，所以不触发凡克斯的"大灾难"
-      const triggeredSkillNames = results[0].triggeredSkills.map((s) => s.skillName)
+      const triggeredSkillNames = results[0]!.triggeredSkills.map((s) => s.skillName)
       expect(triggeredSkillNames).not.toContain('大灾难')
     })
 
@@ -214,7 +214,7 @@ describe('calculator', () => {
       // 执行顺序：凡克斯(风=3,暗=0) -> 伊诺赛特(暗=3,风=2)
       // 最终：风=2, 暗=3
       // 风>暗 不满足，大灾难不触发
-      const triggeredSkillNames = results[0].triggeredSkills.map((s) => s.skillName)
+      const triggeredSkillNames = results[0]!.triggeredSkills.map((s) => s.skillName)
       expect(triggeredSkillNames).not.toContain('大灾难')
     })
 
@@ -237,7 +237,7 @@ describe('calculator', () => {
       // 执行顺序：索拉哈利亚(光=3) -> 伊诺赛特(暗=3, 光=2)
       // 最终：光=2, 暗=3
       // 光>暗 不满足（2<3），神圣嚎叫不触发
-      const triggeredSkillNames = results[0].triggeredSkills.map((s) => s.skillName)
+      const triggeredSkillNames = results[0]!.triggeredSkills.map((s) => s.skillName)
       expect(triggeredSkillNames).not.toContain('神圣嚎叫')
     })
   })
