@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run build-only:*)",
+      "Bash(npx tsx src/utils/calculator.test.ts)",
+      "Bash(node test-calculator.mjs:*)",
+      "Bash(yarn add -D vitest)",
+      "Bash(yarn test:run:*)",
+      "Bash(ssh:*)",
+      "Bash(git config:*)",
+      "Bash(git fetch:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
