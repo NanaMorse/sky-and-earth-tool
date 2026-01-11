@@ -12,7 +12,12 @@
       "Bash(yarn test:run:*)",
       "Bash(ssh:*)",
       "Bash(git config:*)",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "Bash(git push:*)",
+      "Bash(ssh-keygen:*)",
+      "Bash(cat:*)",
+      "Bash(ssh-add:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
