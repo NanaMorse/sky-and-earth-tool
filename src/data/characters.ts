@@ -22,6 +22,8 @@ export const CHARACTERS: Character[] = [
     residueSkills: [
       { name: '烈火斩', condition: { higher: 'fire', lower: 'wind' } },
       { name: '地裂斩波', condition: { higher: 'earth', lower: 'fire' } },
+      { name: '天空裂伤波', condition: { higher: 'light', lower: 'earth' } },
+      { name: '绝望罗德', condition: { higher: 'dark', lower: 'wind' } },
     ],
   },
   {
@@ -29,7 +31,12 @@ export const CHARACTERS: Character[] = [
     name: '卡尔特玛',
     elements: ['water'],
     agility: 399,
-    residueSkills: [{ name: '奔驰鸣枪', condition: { higher: 'thunder', lower: 'water' } }],
+    residueSkills: [
+      { name: '奔驰鸣枪', condition: { higher: 'thunder', lower: 'water' } },
+      { name: '冷焰', condition: { higher: 'water', lower: 'fire' } },
+      { name: '冰川震动', condition: { higher: 'earth', lower: 'water' } },
+      { name: '珍贵惩罚', condition: { higher: 'water', lower: 'thunder' } },
+    ],
   },
   {
     id: 'senareno',
@@ -63,6 +70,8 @@ export const CHARACTERS: Character[] = [
     residueSkills: [
       { name: '神圣嚎叫', condition: { higher: 'light', lower: 'dark' } },
       { name: '悲惨之池', condition: { higher: 'dark', lower: 'light' } },
+      { name: '黑色火焰', condition: { higher: 'fire', lower: 'dark' } },
+      { name: '祈祷光辉', condition: { higher: 'wind', lower: 'water' } },
     ],
   },
 ]
